@@ -63,8 +63,15 @@ class AllFragment : Fragment() {
 
     fragmentAllBinding.creatureRecyclerView.apply {
       adapter = creatureAdapter
-      layoutManager = GridLayoutManager(context, 2,
+      val gridLayoutManager =  GridLayoutManager(context, 2,
               GridLayoutManager.VERTICAL, false)
+      gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+        override fun getSpanSize(position: Int): Int {
+          return if ((position + 1) % 3 == 0) 2 else 1
+        }
+
+      }
+      layoutManager = gridLayoutManager
     }
     creatureAdapter.submitList(CreatureStore.getCreatures())
 

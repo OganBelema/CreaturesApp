@@ -19,8 +19,8 @@ class CreatureCardViewHolder(
         RecyclerView.ViewHolder(creatureItemCreatureCardBinding.root) {
 
     fun bind(creature: Creature, clickListener: (creature: Creature) -> Unit){
-        creatureItemCreatureCardBinding.creature = creature
         creatureItemCreatureCardBinding.apply {
+            this.creature = creature
             root.apply {
                 setOnClickListener {
                     clickListener(creature)
