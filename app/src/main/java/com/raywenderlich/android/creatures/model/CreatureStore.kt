@@ -41,7 +41,7 @@ object CreatureStore {
 
   private val TAG = "CreatureStore"
 
-  lateinit var creatures: List<Creature>
+  private lateinit var creatures: List<Creature>
   private lateinit var foods: List<Food>
 
   fun loadCreatures(context: Context) {
@@ -66,6 +66,8 @@ object CreatureStore {
   fun getCreatureById(id: Int) = creatures.firstOrNull { it.id == id }
 
   fun getFoodById(id: Int) = foods.firstOrNull { it.id == id }
+
+  fun getCreatures() = creatures
 
   private fun loadJSONFromAsset(filename: String, context: Context): String? {
     var json: String? = null

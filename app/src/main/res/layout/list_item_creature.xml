@@ -3,12 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="creature"
-            type="com.raywenderlich.android.creatures.model.Creature" />
-    </data>
-
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_creature_height">
@@ -18,10 +12,10 @@
             android:layout_width="@dimen/list_item_creature_height"
             android:layout_height="@dimen/list_item_creature_height"
             android:contentDescription="@string/content_description_creature_image"
+            app:creatureImage="@{creature.uri}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:creatureImage="@{creature.uri}"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/fullName"
@@ -30,14 +24,32 @@
             android:layout_marginStart="@dimen/padding_standard"
             android:layout_marginTop="@dimen/padding_half"
             android:layout_marginEnd="@dimen/padding_standard"
-            android:layout_marginBottom="@dimen/padding_half"
+            android:text="@{creature.fullName}"
             android:textColor="@android:color/black"
             android:textSize="@dimen/creature_name_text_size"
             android:textStyle="bold"
-            android:text="@{creature.fullName}"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/nickNameTextView"
             app:layout_constraintStart_toEndOf="@+id/creatureImageView"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
             tools:text="Full Name" />
+
+        <TextView
+            android:id="@+id/nickNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_half"
+            android:text="@{creature.nickname}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/fullName"
+            app:layout_constraintTop_toBottomOf="@+id/fullName"
+            tools:text="Nick Name" />
     </android.support.constraint.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="creature"
+            type="com.raywenderlich.android.creatures.model.Creature" />
+    </data>
 </layout>

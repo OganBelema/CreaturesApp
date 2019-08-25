@@ -30,12 +30,14 @@
 
 package com.raywenderlich.android.creatures.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.raywenderlich.android.creatures.databinding.FragmentAllBinding
+import com.raywenderlich.android.creatures.model.Creature
 import com.raywenderlich.android.creatures.model.CreatureStore
 
 
@@ -47,15 +49,21 @@ class AllFragment : Fragment() {
     }
   }
 
+  private val clickListener: (creature: Creature) -> Unit = {creature ->
+    context?.let {
+      startActivity(CreatureActivity.newIntent(it, creature.id))
+    }
+  }
+
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
     val fragmentAllBinding: FragmentAllBinding = FragmentAllBinding.inflate(layoutInflater)
 
-    val creatureAdapter = CreatureAdapter()
+    val creatureAdapter = CreatureAdapter(clickListener)
 
     fragmentAllBinding.creatureRecyclerView.adapter = creatureAdapter
 
-    creatureAdapter.submitList(CreatureStore.creatures)
+    creatureAdapter.submitList(CreatureStore.getCreatures())
 
     return fragmentAllBinding.root
   }

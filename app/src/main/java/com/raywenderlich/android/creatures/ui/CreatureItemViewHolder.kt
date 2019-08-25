@@ -12,8 +12,11 @@ import com.raywenderlich.android.creatures.model.Creature
 class CreatureItemViewHolder(private val listItemCreatureBinding: ListItemCreatureBinding) :
         RecyclerView.ViewHolder(listItemCreatureBinding.root) {
 
-    fun bind(creature: Creature){
+    fun bind(creature: Creature, clickListener: (creature: Creature) -> Unit){
         listItemCreatureBinding.creature = creature
+        listItemCreatureBinding.root.setOnClickListener {
+            clickListener(creature)
+        }
     }
 
     companion object {

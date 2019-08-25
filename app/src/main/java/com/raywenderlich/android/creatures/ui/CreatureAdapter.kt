@@ -7,13 +7,13 @@ import com.raywenderlich.android.creatures.model.Creature
 /**
  * Created by Belema Ogan on 2019-08-24.
  */
-class CreatureAdapter: ListAdapter<Creature, CreatureItemViewHolder>(CreatureDiffUtil) {
+class CreatureAdapter(private val clickListener: (creature: Creature) -> Unit): ListAdapter<Creature, CreatureItemViewHolder>(CreatureDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CreatureItemViewHolder {
         return CreatureItemViewHolder.from(parent)
     }
 
     override fun onBindViewHolder(holder: CreatureItemViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), clickListener)
     }
 }
