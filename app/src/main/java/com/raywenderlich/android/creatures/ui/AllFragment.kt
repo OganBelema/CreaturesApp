@@ -58,7 +58,7 @@ class AllFragment : Fragment() {
 
     val fragmentAllBinding: FragmentAllBinding = FragmentAllBinding.inflate(layoutInflater)
 
-    val creatureAdapter = CreatureWithFoodRecyclerViewAdapter()
+    val creatureAdapter = CreatureWithFoodRecyclerViewAdapter(clickListener)
 
     fragmentAllBinding.creatureRecyclerView.adapter = creatureAdapter
 

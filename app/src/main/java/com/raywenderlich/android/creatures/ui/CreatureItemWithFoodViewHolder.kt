@@ -21,8 +21,11 @@ class CreatureItemWithFoodViewHolder(
 
     private val viewPool = RecyclerView.RecycledViewPool()
 
-    fun bind(creature: Creature){
+    fun bind(creature: Creature, clickListener: (creature: Creature) -> Unit){
         creatureWithFoodBinding.creature = creature
+        creatureWithFoodBinding.root.setOnClickListener {
+            clickListener(creature)
+        }
         creatureWithFoodBinding.foodRecyclerView.apply {
             layoutManager = LinearLayoutManager(context,
                     LinearLayoutManager.HORIZONTAL, false)
