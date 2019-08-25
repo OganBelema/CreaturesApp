@@ -83,4 +83,10 @@ object CreatureStore {
     }
     return json
   }
+
+  fun getFavoriteCreatures(context: Context): List<Creature>? {
+    return Favorites.getFavorites(context)?.mapNotNull {
+      getCreatureById(it)
+    }
+  }
 }

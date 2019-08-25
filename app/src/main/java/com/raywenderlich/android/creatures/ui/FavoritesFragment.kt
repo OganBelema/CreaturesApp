@@ -35,18 +35,42 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.raywenderlich.android.creatures.R
+import com.raywenderlich.android.creatures.databinding.FragmentFavoritesBinding
+import com.raywenderlich.android.creatures.model.Creature
+import com.raywenderlich.android.creatures.model.CreatureStore
 
 
 class FavoritesFragment : Fragment() {
 
-  companion object {
-    fun newInstance(): FavoritesFragment {
-      return FavoritesFragment()
+    companion object {
+        fun newInstance(): FavoritesFragment {
+            return FavoritesFragment()
+        }
     }
-  }
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-    return inflater.inflate(R.layout.fragment_favorites, container, false)
-  }
+    private val clickListener: (creature: Creature) -> Unit = { creature ->
+        context?.let {
+            startActivity(CreatureActivity.newIntent(it, creature.id))
+        }
+    }
+
+    private lateinit var creatureAdapter: CreatureAdapter
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+
+        val fragmentFavoritesBinding: FragmentFavoritesBinding = FragmentFavoritesBinding.inflate(inflater)
+
+        creatureAdapter = CreatureAdapter(clickListener)
+
+        fragmentFavoritesBinding.favoriteCreatureRecyclerView.adapter = creatureAdapter
+
+        return fragmentFavoritesBinding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        context?.let {
+            creatureAdapter.submitList(CreatureStore.getFavoriteCreatures(it))
+        }
+    }
 }
