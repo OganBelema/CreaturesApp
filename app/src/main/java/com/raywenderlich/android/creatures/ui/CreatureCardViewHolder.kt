@@ -32,10 +32,10 @@ class CreatureCardViewHolder(
                             R.color.colorPrimaryDark))
                     creatureItemCreatureCardBinding.creatureCardView
                             .setCardBackgroundColor(backgroundColor)
-                    creatureItemCreatureCardBinding.nickNameBackgroundView
+                    creatureItemCreatureCardBinding.fullNameBackgroundView
                             .setBackgroundColor(backgroundColor)
                     val textColor = if (colorIsDark(backgroundColor)) Color.WHITE else Color.BLACK
-                    creatureItemCreatureCardBinding.nickNameTextView.setTextColor(textColor)
+                    creatureItemCreatureCardBinding.fullNameTextView.setTextColor(textColor)
                 }
             }
         }

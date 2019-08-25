@@ -23,23 +23,23 @@
                 android:contentDescription="@string/content_description_creature_image"
                 android:scaleType="fitXY"
                 app:creatureImage="@{creature.uri}"
-                app:layout_constraintBottom_toTopOf="@+id/nickNameTextView"
+                app:layout_constraintBottom_toTopOf="@+id/fullNameTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@drawable/creature_cat_derp" />
 
             <TextView
-                android:id="@+id/nickNameTextView"
+                android:id="@+id/fullNameTextView"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/card_nickname_holder_height"
-                android:paddingStart="@dimen/padding_half"
-                android:paddingEnd="@dimen/padding_half"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
+                android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="@{creature.nickname}"
+                android:maxLines="3"
+                android:padding="@dimen/padding_half"
+                android:text="@{creature.fullName}"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/creature_card_text_size"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
                 tools:text="Cool Cat" />
 
             <View
-                android:id="@+id/nickNameBackgroundView"
+                android:id="@+id/fullNameBackgroundView"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/card_nickname_holder_height"
                 android:alpha="0.0"
@@ -59,9 +59,13 @@
 
             <View
                 android:id="@+id/cardRippler"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="?android:selectableItemBackground" />
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="?android:selectableItemBackground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
 

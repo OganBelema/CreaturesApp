@@ -16,4 +16,5 @@
     <dimen name="card_corner_radius">8dp</dimen>
     <dimen name="card_image_size">150dp</dimen>
     <dimen name="card_nickname_holder_height">36dp</dimen>
+    <dimen name="creature_card_text_size">36sp</dimen>
 </resources>

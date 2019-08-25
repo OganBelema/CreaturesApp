@@ -33,6 +33,7 @@ package com.raywenderlich.android.creatures.ui
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -63,15 +64,7 @@ class AllFragment : Fragment() {
 
     fragmentAllBinding.creatureRecyclerView.apply {
       adapter = creatureAdapter
-      val gridLayoutManager =  GridLayoutManager(context, 2,
-              GridLayoutManager.VERTICAL, false)
-      gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
-        override fun getSpanSize(position: Int): Int {
-          return if ((position + 1) % 3 == 0) 2 else 1
-        }
-
-      }
-      layoutManager = gridLayoutManager
+      layoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
     }
     creatureAdapter.submitList(CreatureStore.getCreatures())
 
