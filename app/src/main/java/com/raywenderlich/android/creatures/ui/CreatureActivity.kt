@@ -46,57 +46,58 @@ import kotlinx.android.synthetic.main.activity_creature.*
 
 class CreatureActivity : AppCompatActivity() {
 
-  private lateinit var activityCreatureBinding: ActivityCreatureBinding
+    private lateinit var activityCreatureBinding: ActivityCreatureBinding
 
-  private lateinit var creature: Creature
+    private lateinit var creature: Creature
 
-  private val foodRecyclerViewAdapter = FoodRecyclerViewAdapter()
+    private val foodRecyclerViewAdapter = FoodRecyclerViewAdapter()
 
-  companion object {
-    private const val EXTRA_CREATURE_ID = "EXTRA_CREATURE_ID"
+    companion object {
+        private const val EXTRA_CREATURE_ID = "EXTRA_CREATURE_ID"
 
-    fun newIntent(context: Context, creatureId: Int): Intent {
-      val intent = Intent(context, CreatureActivity::class.java)
-      intent.putExtra(EXTRA_CREATURE_ID, creatureId)
-      return intent
+        fun newIntent(context: Context, creatureId: Int): Intent {
+            val intent = Intent(context, CreatureActivity::class.java)
+            intent.putExtra(EXTRA_CREATURE_ID, creatureId)
+            return intent
+        }
     }
-  }
 
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    activityCreatureBinding = DataBindingUtil.setContentView(this, R.layout.activity_creature)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        activityCreatureBinding = DataBindingUtil.setContentView(this, R.layout.activity_creature)
 
-    setupCreature()
-    setupTitle()
-    setupViews()
-    setupFoods()
-  }
-
-  private fun setupCreature() {
-    val creatureById = CreatureStore.getCreatureById(intent.getIntExtra(EXTRA_CREATURE_ID, 1))
-    if (creatureById == null) {
-      Toast.makeText(this, getString(R.string.invalid_creature), Toast.LENGTH_SHORT).show()
-      finish()
-    } else {
-      creature = creatureById
+        setupCreature()
+        setupTitle()
+        setupViews()
+        setupFoods()
     }
-  }
 
-  private fun setupFoods(){
-    val foodRecyclerView = activityCreatureBinding.foodRecyclerView
-    foodRecyclerView.layoutManager = LinearLayoutManager(this,
-            LinearLayoutManager.HORIZONTAL, false)
-    foodRecyclerView.adapter = foodRecyclerViewAdapter
-    val listOfFood = CreatureStore.getCreatureFoods(creature)
-    foodRecyclerViewAdapter.submitList(listOfFood)
-  }
+    private fun setupCreature() {
+        val creatureById = CreatureStore.getCreatureById(intent.getIntExtra(EXTRA_CREATURE_ID, 1))
+        if (creatureById == null) {
+            Toast.makeText(this, getString(R.string.invalid_creature), Toast.LENGTH_SHORT).show()
+            finish()
+        } else {
+            creature = creatureById
+        }
+    }
 
-  private fun setupTitle() {
-    title = String.format(getString(R.string.detail_title_format), creature.nickname)
-    supportActionBar?.setDisplayHomeAsUpEnabled(true)
-  }
+    private fun setupFoods() {
+        activityCreatureBinding.foodRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context,
+                    LinearLayoutManager.HORIZONTAL, false)
+            adapter = foodRecyclerViewAdapter
+        }
+        val listOfFood = CreatureStore.getCreatureFoods(creature)
+        foodRecyclerViewAdapter.submitList(listOfFood)
+    }
 
-  private fun setupViews() {
-    activityCreatureBinding.creature = creature
-  }
+    private fun setupTitle() {
+        title = String.format(getString(R.string.detail_title_format), creature.nickname)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    private fun setupViews() {
+        activityCreatureBinding.creature = creature
+    }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_creature_height">
+
+        <ImageView
+            android:id="@+id/creatureImageView"
+            android:layout_width="@dimen/list_item_creature_height"
+            android:layout_height="@dimen/list_item_creature_height"
+            android:background="@color/colorAccent"
+            android:contentDescription="@string/content_description_creature_image"
+            app:creatureImage="@{creature.uri}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/foodRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/list_item_creature_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/creatureImageView"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="creature"
+            type="com.raywenderlich.android.creatures.model.Creature" />
+    </data>
+</layout>
