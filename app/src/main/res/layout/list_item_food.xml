@@ -3,25 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="food"
-            type="com.raywenderlich.android.creatures.model.Food" />
-    </data>
-
     <android.support.constraint.ConstraintLayout
-        android:layout_width="@dimen/list_item_food_height"
-        android:layout_height="@dimen/list_item_food_height">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/foodImageView"
             android:layout_width="@dimen/list_item_food_height"
             android:layout_height="@dimen/list_item_food_height"
             android:contentDescription="@string/content_description_food_image"
+            app:foodImage="@{food.thumbnail}"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/food_pastry"
-            app:foodImage="@{food.thumbnail}"/>
+            tools:srcCompat="@drawable/food_pastry" />
     </android.support.constraint.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="food"
+            type="com.raywenderlich.android.creatures.model.Food" />
+    </data>
 </layout>
