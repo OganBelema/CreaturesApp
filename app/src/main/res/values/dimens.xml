@@ -12,4 +12,8 @@
     <dimen name="creature_name_text_size">20sp</dimen>
     <dimen name="food_name_text_size">20sp</dimen>
     <dimen name="list_item_food_height">@dimen/list_item_creature_height</dimen>
+    <dimen name="card_elevation">3dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_image_size">150dp</dimen>
+    <dimen name="card_nickname_holder_height">36dp</dimen>
 </resources>

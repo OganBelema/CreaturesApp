@@ -32,6 +32,7 @@ package com.raywenderlich.android.creatures.ui
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -58,10 +59,13 @@ class AllFragment : Fragment() {
 
     val fragmentAllBinding: FragmentAllBinding = FragmentAllBinding.inflate(layoutInflater)
 
-    val creatureAdapter = CreatureWithFoodRecyclerViewAdapter()
+    val creatureAdapter =  CreatureCardAdapter(clickListener)
 
-    fragmentAllBinding.creatureRecyclerView.adapter = creatureAdapter
-
+    fragmentAllBinding.creatureRecyclerView.apply {
+      adapter = creatureAdapter
+      layoutManager = GridLayoutManager(context, 2,
+              GridLayoutManager.VERTICAL, false)
+    }
     creatureAdapter.submitList(CreatureStore.getCreatures())
 
     return fragmentAllBinding.root

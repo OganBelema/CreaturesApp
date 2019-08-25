@@ -7,7 +7,7 @@ import com.raywenderlich.android.creatures.model.Creature
 /**
  * Created by Belema Ogan on 2019-08-25.
  */
-class CreatureWithFoodRecyclerViewAdapter :
+class CreatureWithFoodRecyclerViewAdapter(private val clickListener: (creature: Creature) -> Unit) :
         ListAdapter<Creature, CreatureItemWithFoodViewHolder>(CreatureDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
@@ -16,6 +16,6 @@ class CreatureWithFoodRecyclerViewAdapter :
     }
 
     override fun onBindViewHolder(holder: CreatureItemWithFoodViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), clickListener)
     }
 }
