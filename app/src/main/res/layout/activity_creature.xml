@@ -69,7 +69,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/foodRecyclerView"
             android:layout_width="0dp"
-            android:layout_height="@dimen/list_item_food_height"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding_standard"
             android:layout_marginBottom="@dimen/padding_standard"
             app:layout_constraintEnd_toEndOf="parent"

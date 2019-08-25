@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/actionSpan1"
+        android:orderInCategory="@integer/order_in_category_span_1"
+        android:title="@string/span_1"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/actionSpan2"
+        android:orderInCategory="@integer/order_in_category_span_2"
+        android:title="@string/span_2"
+        app:showAsAction="never"/>
+</menu>

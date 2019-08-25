@@ -1,15 +1,10 @@
 package com.raywenderlich.android.creatures.ui
 
-import android.graphics.BitmapFactory
-import android.support.v4.content.ContextCompat
-import android.support.v7.graphics.Palette
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.LinearSnapHelper
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.SnapHelper
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.raywenderlich.android.creatures.R
 import com.raywenderlich.android.creatures.databinding.ListItemCreatureWithFoodBinding
 import com.raywenderlich.android.creatures.model.Creature
 import com.raywenderlich.android.creatures.model.CreatureStore

@@ -34,9 +34,8 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.StaggeredGridLayoutManager
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import com.raywenderlich.android.creatures.R
 import com.raywenderlich.android.creatures.databinding.FragmentAllBinding
 import com.raywenderlich.android.creatures.model.Creature
 import com.raywenderlich.android.creatures.model.CreatureStore
@@ -56,20 +55,40 @@ class AllFragment : Fragment() {
     }
   }
 
+  private lateinit var staggeredGridLayoutManager: StaggeredGridLayoutManager
+
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
     val fragmentAllBinding: FragmentAllBinding = FragmentAllBinding.inflate(layoutInflater)
 
     val creatureAdapter =  CreatureCardAdapter(clickListener)
 
+    staggeredGridLayoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
+
     fragmentAllBinding.creatureRecyclerView.apply {
       adapter = creatureAdapter
-      layoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
+      this.layoutManager = staggeredGridLayoutManager
     }
     creatureAdapter.submitList(CreatureStore.getCreatures())
+
+    setHasOptionsMenu(true)
 
     return fragmentAllBinding.root
   }
 
+
+  override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+    super.onCreateOptionsMenu(menu, inflater)
+    inflater?.inflate(R.menu.main, menu)
+  }
+
+  override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    when(item?.itemId){
+      R.id.actionSpan1 -> staggeredGridLayoutManager.spanCount = 1
+
+      R.id.actionSpan2 -> staggeredGridLayoutManager.spanCount = 2
+    }
+    return true
+  }
 
 }

@@ -8,4 +8,6 @@
     <string name="detail_title_format">Creature: %1$s</string>
     <string name="content_description_creature_image">Creature Image</string>
     <string name="content_description_food_image">Food Image</string>
+    <string name="span_1">Span 1</string>
+    <string name="span_2">Span 2</string>
 </resources>
