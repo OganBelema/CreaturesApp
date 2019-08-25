@@ -89,4 +89,10 @@ object CreatureStore {
       getCreatureById(it)
     }
   }
+
+  fun getCreatureFoods(creature: Creature): List<Food> {
+    return creature.foods.mapNotNull {
+      getFoodById(it)
+    }
+  }
 }

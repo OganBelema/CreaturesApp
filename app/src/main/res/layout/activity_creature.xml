@@ -1,62 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  tools:context="com.raywenderlich.android.creatures.ui.CreatureActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-  <ImageView
-    android:id="@+id/headerImage"
-    android:layout_width="@dimen/detail_header_image_size"
-    android:layout_height="@dimen/detail_header_image_size"
-    android:layout_marginTop="@dimen/padding_half"
-    android:contentDescription="@string/content_description_header_image"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/creature_head_fox" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.raywenderlich.android.creatures.ui.CreatureActivity">
 
-  <TextView
-    android:id="@+id/fullName"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="@dimen/padding_standard"
-    android:layout_marginStart="@dimen/padding_standard"
-    android:layout_marginTop="@dimen/padding_standard"
-    android:textColor="@android:color/black"
-    android:textSize="@dimen/detail_name_text_size"
-    android:textStyle="bold"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/headerImage"
-    tools:text="FirstName LastName" />
+        <ImageButton
+            android:id="@+id/favoriteButton"
+            android:layout_width="@dimen/favorite_button_size"
+            android:layout_height="@dimen/favorite_button_size"
+            android:layout_marginTop="@dimen/padding_standard"
+            android:layout_marginEnd="@dimen/padding_standard"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/content_description_favorite_button"
+            android:scaleType="fitXY"
+            android:tint="@color/colorAccent"
+            app:favoriteButtonClickListener="@{creature}"
+            app:favoriteButtonImage="@{creature.favorite}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_favorite_border_black_24dp" />
 
-  <TextView
-    android:id="@+id/planet"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="@dimen/padding_standard"
-    android:layout_marginStart="@dimen/padding_standard"
-    android:layout_marginTop="@dimen/padding_half"
-    android:textSize="@dimen/detail_planet_text_size"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/fullName"
-    tools:text="Planet" />
+        <ImageView
+            android:id="@+id/headerImage"
+            android:layout_width="@dimen/detail_header_image_size"
+            android:layout_height="@dimen/detail_header_image_size"
+            android:layout_marginTop="@dimen/padding_half"
+            android:contentDescription="@string/content_description_header_image"
+            app:creatureImage="@{creature.uri}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/creature_head_fox" />
 
-  <ImageButton
-    android:id="@+id/favoriteButton"
-    android:layout_width="@dimen/favorite_button_size"
-    android:layout_height="@dimen/favorite_button_size"
-    android:layout_marginEnd="@dimen/padding_standard"
-    android:layout_marginTop="@dimen/padding_standard"
-    android:background="@android:color/transparent"
-    android:contentDescription="@string/content_description_favorite_button"
-    android:scaleType="fitXY"
-    android:tint="@color/colorAccent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/ic_favorite_border_black_24dp" />
+        <TextView
+            android:id="@+id/planet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_standard"
+            android:layout_marginTop="@dimen/padding_half"
+            android:layout_marginEnd="@dimen/padding_standard"
+            android:text="@{creature.planet}"
+            android:textSize="@dimen/detail_planet_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fullName"
+            tools:text="Planet" />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/fullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_standard"
+            android:layout_marginTop="@dimen/padding_standard"
+            android:layout_marginEnd="@dimen/padding_standard"
+            android:text="@{creature.fullName}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/detail_name_text_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerImage"
+            tools:text="FirstName LastName" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/foodRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/list_item_food_height"
+            android:layout_marginTop="@dimen/padding_standard"
+            android:layout_marginBottom="@dimen/padding_standard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/planet" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="creature"
+            type="com.raywenderlich.android.creatures.model.Creature" />
+    </data>
+</layout>
