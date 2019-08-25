@@ -16,6 +16,6 @@ class CreatureWithFoodRecyclerViewAdapter(private val clickListener:(creature: C
     }
 
     override fun onBindViewHolder(holder: CreatureItemWithFoodViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), clickListener)
     }
 }
