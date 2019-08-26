@@ -34,6 +34,7 @@ import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
@@ -87,6 +88,9 @@ class CreatureActivity : AppCompatActivity() {
         activityCreatureBinding.foodRecyclerView.apply {
             layoutManager = GridLayoutManager(context, 3)
             adapter = foodRecyclerViewAdapter
+            addItemDecoration(FoodItemDividerDecoration(ContextCompat.getColor(
+                    this@CreatureActivity, R.color.black),
+                    resources.getDimensionPixelSize(R.dimen.list_item_divider_height)))
         }
         val listOfFood = CreatureStore.getCreatureFoods(creature)
         foodRecyclerViewAdapter.submitList(listOfFood)
