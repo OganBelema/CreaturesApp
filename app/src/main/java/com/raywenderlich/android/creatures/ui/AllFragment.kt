@@ -33,6 +33,7 @@ package com.raywenderlich.android.creatures.ui
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.*
 import com.raywenderlich.android.creatures.R
@@ -55,25 +56,62 @@ class AllFragment : Fragment() {
     }
   }
 
+  private lateinit var fragmentAllBinding: FragmentAllBinding
+
   private lateinit var staggeredGridLayoutManager: StaggeredGridLayoutManager
+
+  private lateinit var listItemDecoration: RecyclerView.ItemDecoration
+
+  private lateinit var gridItemDecoration: RecyclerView.ItemDecoration
+
+  private lateinit var listMenuItem: MenuItem
+
+  private lateinit var gridMenuItem: MenuItem
+
+  private var gridState = GridState.GRID
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
-    val fragmentAllBinding: FragmentAllBinding = FragmentAllBinding.inflate(layoutInflater)
+    fragmentAllBinding = FragmentAllBinding.inflate(layoutInflater)
 
     val creatureAdapter =  CreatureCardAdapter(clickListener)
 
     staggeredGridLayoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
 
+    val spacingInPixels = resources.getDimensionPixelSize(R.dimen.creature_card_grid_layout_margin)
+
+    listItemDecoration = SpacingItemDecoration(1, spacingInPixels)
+
+    gridItemDecoration = SpacingItemDecoration(2, spacingInPixels)
+
     fragmentAllBinding.creatureRecyclerView.apply {
       adapter = creatureAdapter
       this.layoutManager = staggeredGridLayoutManager
+      addItemDecoration(gridItemDecoration)
     }
     creatureAdapter.submitList(CreatureStore.getCreatures())
 
     setHasOptionsMenu(true)
 
     return fragmentAllBinding.root
+  }
+
+  override fun onPrepareOptionsMenu(menu: Menu) {
+    super.onPrepareOptionsMenu(menu)
+    listMenuItem = menu.findItem(R.id.actionSpan1)
+    gridMenuItem = menu.findItem(R.id.actionSpan2)
+
+    when(gridState){
+      GridState.LIST -> {
+        listMenuItem.isEnabled = false
+        gridMenuItem.isEnabled = true
+      }
+
+      GridState.GRID -> {
+        gridMenuItem.isEnabled = false
+        listMenuItem.isEnabled = true
+      }
+    }
   }
 
 
@@ -84,11 +122,28 @@ class AllFragment : Fragment() {
 
   override fun onOptionsItemSelected(item: MenuItem?): Boolean {
     when(item?.itemId){
-      R.id.actionSpan1 -> staggeredGridLayoutManager.spanCount = 1
+      R.id.actionSpan1 -> {
+        gridState = GridState.LIST
+        updateRecyclerView(1, listItemDecoration, gridItemDecoration)
+      }
 
-      R.id.actionSpan2 -> staggeredGridLayoutManager.spanCount = 2
+      R.id.actionSpan2 -> {
+        gridState = GridState.GRID
+        updateRecyclerView(2, gridItemDecoration, listItemDecoration)
+      }
     }
     return true
+  }
+
+  private fun updateRecyclerView(spanCount: Int, addItemDecoration: RecyclerView.ItemDecoration,
+                                 removeItemDecoration: RecyclerView.ItemDecoration) {
+    staggeredGridLayoutManager.spanCount = spanCount
+
+    fragmentAllBinding.creatureRecyclerView.apply {
+      removeItemDecoration(removeItemDecoration)
+      addItemDecoration(addItemDecoration)
+    }
+
   }
 
 }
