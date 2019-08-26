@@ -32,9 +32,11 @@ package com.raywenderlich.android.creatures.ui
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.raywenderlich.android.creatures.R
 import com.raywenderlich.android.creatures.databinding.FragmentFavoritesBinding
 import com.raywenderlich.android.creatures.model.Creature
 import com.raywenderlich.android.creatures.model.CreatureStore
@@ -62,7 +64,13 @@ class FavoritesFragment : Fragment() {
 
         creatureAdapter = CreatureAdapter(clickListener)
 
-        fragmentFavoritesBinding.favoriteCreatureRecyclerView.adapter = creatureAdapter
+        val heightInPixel = resources.getDimensionPixelSize(R.dimen.list_item_divider_height)
+
+        fragmentFavoritesBinding.favoriteCreatureRecyclerView.apply {
+            adapter = creatureAdapter
+            addItemDecoration(DividerItemDecoration(ContextCompat.getColor(context, R.color.black),
+                    heightInPixel))
+        }
 
         return fragmentFavoritesBinding.root
     }
