@@ -58,7 +58,7 @@ class AllFragment : Fragment() {
 
   private lateinit var fragmentAllBinding: FragmentAllBinding
 
-  private lateinit var staggeredGridLayoutManager: StaggeredGridLayoutManager
+  private lateinit var gridLayoutManager: GridLayoutManager
 
   private lateinit var listItemDecoration: RecyclerView.ItemDecoration
 
@@ -78,7 +78,15 @@ class AllFragment : Fragment() {
 
     creatureAdapter =  CreatureCardAdapter(clickListener)
 
-    staggeredGridLayoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
+    gridLayoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL,
+            false)
+
+    gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+      override fun getSpanSize(position: Int): Int {
+        return creatureAdapter.spanSizeAtPosition(position)
+      }
+
+    }
 
     val spacingInPixels = resources.getDimensionPixelSize(R.dimen.creature_card_grid_layout_margin)
 
@@ -88,7 +96,7 @@ class AllFragment : Fragment() {
 
     fragmentAllBinding.creatureRecyclerView.apply {
       adapter = creatureAdapter
-      this.layoutManager = staggeredGridLayoutManager
+      this.layoutManager = gridLayoutManager
       addItemDecoration(gridItemDecoration)
       addOnScrollListener(object : RecyclerView.OnScrollListener(){
         override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
@@ -149,8 +157,8 @@ class AllFragment : Fragment() {
 
   private fun updateRecyclerView(spanCount: Int, addItemDecoration: RecyclerView.ItemDecoration,
                                  removeItemDecoration: RecyclerView.ItemDecoration) {
-    staggeredGridLayoutManager.spanCount = spanCount
-
+    gridLayoutManager.spanCount = spanCount
+    creatureAdapter.jupiterSpanSize = spanCount
     fragmentAllBinding.creatureRecyclerView.apply {
       removeItemDecoration(removeItemDecoration)
       addItemDecoration(addItemDecoration)
