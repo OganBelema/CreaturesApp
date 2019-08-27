@@ -15,13 +15,15 @@ import com.raywenderlich.android.creatures.model.Creature
 class CreatureItemViewHolder(private val listItemCreatureBinding: ListItemCreatureBinding) :
         RecyclerView.ViewHolder(listItemCreatureBinding.root) {
 
-    fun bind(creature: Creature, clickListener: (creature: Creature) -> Unit) {
-        listItemCreatureBinding.creature = creature
-        listItemCreatureBinding.root.apply {
-            setOnClickListener {
-                clickListener(creature)
+    fun bind(creature: Creature?, clickListener: (creature: Creature) -> Unit) {
+        creature?.let {
+            listItemCreatureBinding.creature = creature
+            listItemCreatureBinding.root.apply {
+                setOnClickListener {
+                    clickListener(creature)
+                }
+                animateView(this)
             }
-            animateView(this)
         }
 
     }

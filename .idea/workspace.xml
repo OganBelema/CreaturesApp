@@ -21,8 +21,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureCardViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureCardViewHolder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureItemViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureItemViewHolder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/CreatureStore.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/CreatureStore.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/FavoritesFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/FavoritesFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,81 +52,21 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/AllFragment.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="78" column="35" lean-forward="true" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/slide_from_bottom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-              <folding>
-                <element signature="e#48#197#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureItemViewHolder.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="e#48#295#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureCardAdapter.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+            <state relative-caret-position="258">
+              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureCardViewHolder.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/HeaderViewHolder.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/scale.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/DividerItemDecoration.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+            <state relative-caret-position="168">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
               <folding>
-                <element signature="e#48#154#0" expanded="true" />
+                <element signature="e#48#297#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/FavoritesFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="58" column="47" lean-forward="true" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
+            <state relative-caret-position="183">
+              <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
               <folding>
                 <element signature="e#0#1640#0" expanded="true" />
               </folding>
@@ -142,10 +85,78 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/slide_from_top.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureDiffUtil.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            <state relative-caret-position="120">
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+              <folding>
+                <element signature="e#48#145#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CompositeDiffUtil.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+              <folding>
+                <element signature="e#48#150#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/recyclerview-v7/27.1.1/ad225a74247e675db0b05ea4f8b17202acbb7f9d/recyclerview-v7-27.1.1-sources.jar!/android/support/v7/recyclerview/extensions/AsyncListDiffer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="143">
+              <caret line="237" selection-start-line="237" selection-end-line="237" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureCardViewHolder.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/CompositeItem.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_planet_header.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+              <folding>
+                <element signature="e#363#385#0" expanded="true" />
+                <element signature="e#639#664#0" expanded="true" />
+                <element signature="e#702#727#0" expanded="true" />
+                <element signature="e#768#793#0" expanded="true" />
+                <element signature="e#876#908#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/ViewType.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -157,11 +168,11 @@
       <list>
         <option value="Kotlin File" />
         <option value="Kotlin Object" />
-        <option value="layoutResourceFile" />
         <option value="valueResourceFile" />
-        <option value="Kotlin Class" />
-        <option value="Kotlin Enum" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin Enum" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -169,7 +180,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="creature_list_in_staggered_grid" />
+        <entry key="$PROJECT_DIR$" value="add_animation_to_recycler_view_items" />
       </map>
     </option>
   </component>
@@ -184,7 +195,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/NavigateToDetailClickListener.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/build/generated/source/kapt/debug/com/raywenderlich/android/creatures/databinding/ListItemCreatureBindingImpl.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/CreatureStore.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/Food.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/FoodListItemViewHolder.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/FoodDiffUtil.kt" />
@@ -205,12 +215,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_creature.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/FavoritesFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/DividerItemDecoration.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/FoodItemDividerDecoration.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/ScrollDirection.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureCardAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/anim/slide_from_bottom.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/anim/slide_from_top.xml" />
@@ -218,6 +226,15 @@
         <option value="$PROJECT_DIR$/app/src/main/res/anim/scale.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureItemViewHolder.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureCardViewHolder.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/Header.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/CreatureStore.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/ViewType.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CompositeDiffUtil.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_planet_header.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/HeaderViewHolder.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/FavoritesFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/CompositeItem.kt" />
       </list>
     </option>
   </component>
@@ -287,6 +304,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="creatures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="start" type="b2602c69:ProjectViewProjectNode" />
+              <item name="start" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="creatures" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="start" type="b2602c69:ProjectViewProjectNode" />
@@ -482,7 +509,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32904148" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.32904148" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -494,10 +521,10 @@
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.3295129" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3295129" />
-      <window_info anchor="bottom" id="Terminal" order="4" visible="true" weight="0.3295129" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.3295129" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5007153" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49928468" weight="0.3295129" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" sideWeight="0.49928468" visible="true" weight="0.3295129" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.3295129" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
@@ -538,39 +565,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/android/databinding/DataBinderMapperImpl.java" />
-    <entry file="file://$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out/com/raywenderlich/android/creatures/DataBinderMapperImpl.java" />
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.databinding/library/3.5.0/8a34c1ed9ac6c0a6b56f3acb3ca8928022457c90/library-3.5.0-sources.jar!/android/databinding/MergedDataBinderMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/app/CreaturesApplication.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/Favorites.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="67" column="2" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_favorites.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/NavigateToDetailClickListener.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureItemClickListener.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -587,13 +581,6 @@
           <folding>
             <element signature="e#48#141#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/CreatureStore.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="916">
-          <caret line="97" column="1" selection-start-line="97" selection-start-column="1" selection-end-line="97" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -785,16 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureDiffUtil.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#48#145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/ScrollDirection.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -840,26 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/FavoritesFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="58" column="47" lean-forward="true" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#1640#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-          <folding>
-            <element signature="e#48#197#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureItemViewHolder.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -884,10 +841,114 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/Header.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.50/8ac406cf33e942265c4abb33ee0acdee79292dd6/kotlin-stdlib-common-1.3.50-sources.jar!/generated/_Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="1311" column="37" selection-start-line="1311" selection-start-column="37" selection-end-line="1311" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/CreatureStore.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/ViewType.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureDiffUtil.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          <folding>
+            <element signature="e#48#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_planet_header.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+          <folding>
+            <element signature="e#363#385#0" expanded="true" />
+            <element signature="e#639#664#0" expanded="true" />
+            <element signature="e#702#727#0" expanded="true" />
+            <element signature="e#768#793#0" expanded="true" />
+            <element signature="e#876#908#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureCardViewHolder.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        <state relative-caret-position="322">
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/FavoritesFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#1640#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/recyclerview-v7/27.1.1/ad225a74247e675db0b05ea4f8b17202acbb7f9d/recyclerview-v7-27.1.1-sources.jar!/android/support/v7/recyclerview/extensions/AsyncListDiffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/model/CompositeItem.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CompositeDiffUtil.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding>
+            <element signature="e#48#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/CreatureAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/raywenderlich/android/creatures/ui/HeaderViewHolder.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding>
+            <element signature="e#48#297#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

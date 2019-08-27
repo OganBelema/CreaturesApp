@@ -78,7 +78,7 @@ class FavoritesFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         context?.let {
-            creatureAdapter.submitList(CreatureStore.getFavoriteCreatures(it))
+            creatureAdapter.submitList(CreatureStore.getFavoriteComposite(it))
         }
     }
 }

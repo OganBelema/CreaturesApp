@@ -20,4 +20,5 @@
     <dimen name="creature_card_grid_layout_margin">16dp</dimen>
     <dimen name="list_item_divider_height">2dp</dimen>
     <dimen name="list_item_with_divider_height">132dp</dimen>
+    <dimen name="header_height">60dp</dimen>
 </resources>
