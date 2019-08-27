@@ -17,7 +17,7 @@ import com.raywenderlich.android.creatures.model.Creature
  * Created by Belema Ogan on 2019-08-25.
  */
 class CreatureJupiterCardViewHolder(
-        private val creatureItemCreatureCardJupiterBinding: CreatureItemCreatureCardJupiterBinding):
+        private val creatureItemCreatureCardJupiterBinding: CreatureItemCreatureCardJupiterBinding) :
         RecyclerView.ViewHolder(creatureItemCreatureCardJupiterBinding.root) {
 
     fun bind(creature: Creature, clickListener: (creature: Creature) -> Unit){

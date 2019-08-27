@@ -22,16 +22,18 @@ class CreatureCardAdapter(private val clickListener: (creature: Creature) -> Uni
         return when(viewType){
             ViewType.JUPITER.ordinal -> CreatureJupiterCardViewHolder.from(parent)
             ViewType.OTHER.ordinal -> CreatureCardViewHolder.from(parent)
+            ViewType.MARS.ordinal -> CreatureMarsCardViewHolder.from(parent)
             else -> throw IllegalArgumentException("Unknown view type")
         }
 
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (getItem(position).planet == Constants.JUPITER)
-            ViewType.JUPITER.ordinal
-        else
-            ViewType.OTHER.ordinal
+        return when (getItem(position).planet) {
+            Constants.JUPITER -> ViewType.JUPITER.ordinal
+            Constants.MARS -> ViewType.MARS.ordinal
+            else -> ViewType.OTHER.ordinal
+        }
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -42,6 +44,10 @@ class CreatureCardAdapter(private val clickListener: (creature: Creature) -> Uni
             }
 
             is CreatureJupiterCardViewHolder -> {
+                holder.bind(getItem(position), clickListener)
+            }
+
+            is CreatureMarsCardViewHolder -> {
                 holder.bind(getItem(position), clickListener)
             }
         }

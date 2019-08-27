@@ -5,5 +5,5 @@ package com.raywenderlich.android.creatures.ui
  */
 enum class ViewType {
 
-    HEADER, CREATURE, JUPITER, OTHER
+    HEADER, CREATURE, JUPITER, MARS, OTHER
 }

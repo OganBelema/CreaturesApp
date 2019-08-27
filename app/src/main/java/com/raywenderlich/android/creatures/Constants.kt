@@ -5,4 +5,6 @@ package com.raywenderlich.android.creatures
  */
 object Constants {
     const val JUPITER = "Jupiter"
+
+    const val MARS = "Mars"
 }
