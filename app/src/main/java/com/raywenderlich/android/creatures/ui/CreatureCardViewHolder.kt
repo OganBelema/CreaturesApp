@@ -54,9 +54,9 @@ class CreatureCardViewHolder(
 
     private fun animateView(viewToAnimate: View){
         if (viewToAnimate.animation == null){
-            val animId = if (scrollDirection == ScrollDirection.DOWN) R.anim.slide_from_bottom else
-                R.anim.slide_from_top
-            val animation = AnimationUtils.loadAnimation(viewToAnimate.context, animId)
+            /*val animId = if (scrollDirection == ScrollDirection.DOWN) R.anim.slide_from_bottom else
+                R.anim.slide_from_top*/
+            val animation = AnimationUtils.loadAnimation(viewToAnimate.context, R.anim.scale)
             viewToAnimate.animation = animation
         }
     }

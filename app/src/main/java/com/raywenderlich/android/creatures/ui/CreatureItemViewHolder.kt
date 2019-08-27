@@ -2,7 +2,10 @@ package com.raywenderlich.android.creatures.ui
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import com.raywenderlich.android.creatures.R
 import com.raywenderlich.android.creatures.databinding.ListItemCreatureBinding
 import com.raywenderlich.android.creatures.model.Creature
 
@@ -12,10 +15,21 @@ import com.raywenderlich.android.creatures.model.Creature
 class CreatureItemViewHolder(private val listItemCreatureBinding: ListItemCreatureBinding) :
         RecyclerView.ViewHolder(listItemCreatureBinding.root) {
 
-    fun bind(creature: Creature, clickListener: (creature: Creature) -> Unit){
+    fun bind(creature: Creature, clickListener: (creature: Creature) -> Unit) {
         listItemCreatureBinding.creature = creature
-        listItemCreatureBinding.root.setOnClickListener {
-            clickListener(creature)
+        listItemCreatureBinding.root.apply {
+            setOnClickListener {
+                clickListener(creature)
+            }
+            animateView(this)
+        }
+
+    }
+
+    private fun animateView(viewToAnimate: View) {
+        if (viewToAnimate.animation == null) {
+            val animation = AnimationUtils.loadAnimation(viewToAnimate.context, R.anim.scale)
+            viewToAnimate.animation = animation
         }
     }
 
