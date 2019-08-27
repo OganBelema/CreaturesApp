@@ -74,6 +74,10 @@ object Favorites {
     return favorites
   }
 
+  fun saveFavorites(list: List<Int>, context: Context){
+    saveFavorites(KEY_FAVORITES, list, context)
+  }
+
   private fun saveFavorites(key: String, list: List<Int>, context: Context) {
     val json = gson.toJson(list)
     sharedPrefs(context).edit().putString(key, json).apply()

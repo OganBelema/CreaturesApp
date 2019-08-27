@@ -33,16 +33,21 @@ package com.raywenderlich.android.creatures.ui
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.helper.ItemTouchHelper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.raywenderlich.android.creatures.R
 import com.raywenderlich.android.creatures.databinding.FragmentFavoritesBinding
+import com.raywenderlich.android.creatures.model.CompositeItem
 import com.raywenderlich.android.creatures.model.Creature
 import com.raywenderlich.android.creatures.model.CreatureStore
+import com.raywenderlich.android.creatures.model.Favorites
+import java.util.*
 
 
-class FavoritesFragment : Fragment() {
+class FavoritesFragment : Fragment(), ItemTouchHelperListener  {
 
     companion object {
         fun newInstance(): FavoritesFragment {
@@ -58,6 +63,8 @@ class FavoritesFragment : Fragment() {
 
     private lateinit var creatureAdapter: CreatureAdapter
 
+    private lateinit var compositeItems: List<CompositeItem>
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         val fragmentFavoritesBinding: FragmentFavoritesBinding = FragmentFavoritesBinding.inflate(inflater)
@@ -70,6 +77,8 @@ class FavoritesFragment : Fragment() {
             adapter = creatureAdapter
             addItemDecoration(DividerItemDecoration(ContextCompat.getColor(context, R.color.black),
                     heightInPixel))
+            val itemTouchHelper = ItemTouchHelper(ItemTouchHelperCallback(this@FavoritesFragment))
+            itemTouchHelper.attachToRecyclerView(this)
         }
 
         return fragmentFavoritesBinding.root
@@ -78,7 +87,25 @@ class FavoritesFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         context?.let {
-            creatureAdapter.submitList(CreatureStore.getFavoriteComposite(it))
+            compositeItems = CreatureStore.getFavoriteComposite(it)
+            creatureAdapter.submitList(compositeItems)
         }
+    }
+
+    override fun onItemMove(recyclerView: RecyclerView, fromPosition: Int, toPosition: Int):
+            Boolean {
+        if (fromPosition < toPosition){
+            for(i in fromPosition until toPosition){
+                context?.let {
+                    Collections.swap(compositeItems, i, i + 1)
+                }
+            }
+        } else {
+            for (i in fromPosition downTo toPosition + 1){
+                Collections.swap(compositeItems, i, i - 1)
+            }
+        }
+        creatureAdapter.notifyItemMoved(fromPosition, toPosition)
+        return true
     }
 }
