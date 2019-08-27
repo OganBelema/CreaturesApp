@@ -6,7 +6,9 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.graphics.Palette
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import com.raywenderlich.android.creatures.R
 import com.raywenderlich.android.creatures.databinding.CreatureItemCreatureCardBinding
 import com.raywenderlich.android.creatures.model.Creature
@@ -17,6 +19,8 @@ import com.raywenderlich.android.creatures.model.Creature
 class CreatureCardViewHolder(
         private val creatureItemCreatureCardBinding: CreatureItemCreatureCardBinding) :
         RecyclerView.ViewHolder(creatureItemCreatureCardBinding.root) {
+
+    var scrollDirection = ScrollDirection.DOWN
 
     fun bind(creature: Creature, clickListener: (creature: Creature) -> Unit){
         creatureItemCreatureCardBinding.apply {
@@ -37,6 +41,7 @@ class CreatureCardViewHolder(
                     val textColor = if (colorIsDark(backgroundColor)) Color.WHITE else Color.BLACK
                     creatureItemCreatureCardBinding.fullNameTextView.setTextColor(textColor)
                 }
+                animateView(this)
             }
         }
     }
@@ -45,6 +50,15 @@ class CreatureCardViewHolder(
         val darkness = 1 - (0.299 * Color.red(backgroundColor)
                 + 0.587 * Color.green(backgroundColor) + 0.114 * Color.blue(backgroundColor)) / 255
         return darkness >= 0.5
+    }
+
+    private fun animateView(viewToAnimate: View){
+        if (viewToAnimate.animation == null){
+            val animId = if (scrollDirection == ScrollDirection.DOWN) R.anim.slide_from_bottom else
+                R.anim.slide_from_top
+            val animation = AnimationUtils.loadAnimation(viewToAnimate.context, animId)
+            viewToAnimate.animation = animation
+        }
     }
 
     companion object {

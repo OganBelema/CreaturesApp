@@ -70,11 +70,13 @@ class AllFragment : Fragment() {
 
   private var gridState = GridState.GRID
 
+  private lateinit var creatureAdapter: CreatureCardAdapter
+
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
     fragmentAllBinding = FragmentAllBinding.inflate(layoutInflater)
 
-    val creatureAdapter =  CreatureCardAdapter(clickListener)
+    creatureAdapter =  CreatureCardAdapter(clickListener)
 
     staggeredGridLayoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
 
@@ -88,6 +90,16 @@ class AllFragment : Fragment() {
       adapter = creatureAdapter
       this.layoutManager = staggeredGridLayoutManager
       addItemDecoration(gridItemDecoration)
+      addOnScrollListener(object : RecyclerView.OnScrollListener(){
+        override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+          super.onScrolled(recyclerView, dx, dy)
+          creatureAdapter.creatureCardViewHolder.scrollDirection = if (dy > 0){
+            ScrollDirection.DOWN
+          } else {
+            ScrollDirection.UP
+          }
+        }
+      })
     }
     creatureAdapter.submitList(CreatureStore.getCreatures())
 
