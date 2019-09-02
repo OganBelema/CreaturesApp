@@ -2,6 +2,7 @@ package com.raywenderlich.android.creatures.ui
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
@@ -15,7 +16,8 @@ import com.raywenderlich.android.creatures.model.Creature
 class CreatureItemViewHolder(private val listItemCreatureBinding: ListItemCreatureBinding) :
         RecyclerView.ViewHolder(listItemCreatureBinding.root) {
 
-    fun bind(creature: Creature?, clickListener: (creature: Creature) -> Unit) {
+    fun bind(creature: Creature?, clickListener: (creature: Creature) -> Unit,
+             itemDragListener: (viewHolder: RecyclerView.ViewHolder) -> Unit) {
         creature?.let {
             listItemCreatureBinding.creature = creature
             listItemCreatureBinding.root.apply {
@@ -23,6 +25,13 @@ class CreatureItemViewHolder(private val listItemCreatureBinding: ListItemCreatu
                     clickListener(creature)
                 }
                 animateView(this)
+            }
+
+            listItemCreatureBinding.dragHandle.setOnTouchListener { _, event ->
+                if (event.action == MotionEvent.ACTION_DOWN){
+                    itemDragListener(this)
+                }
+                false
             }
         }
 

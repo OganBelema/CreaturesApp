@@ -10,7 +10,8 @@ import java.lang.IllegalArgumentException
 /**
  * Created by Belema Ogan on 2019-08-24.
  */
-class CreatureAdapter(private val clickListener: (creature: Creature) -> Unit) :
+class CreatureAdapter(private val clickListener: (creature: Creature) -> Unit,
+                      private val itemDragListener: (viewHolder: RecyclerView.ViewHolder) -> Unit) :
         ListAdapter<CompositeItem, RecyclerView.ViewHolder>(CompositeDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -31,7 +32,8 @@ class CreatureAdapter(private val clickListener: (creature: Creature) -> Unit) :
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is HeaderViewHolder -> holder.bind(getItem(position).header)
-            is CreatureItemViewHolder -> holder.bind(getItem(position).creature, clickListener)
+            is CreatureItemViewHolder -> holder.bind(getItem(position).creature, clickListener,
+                    itemDragListener)
         }
     }
 }

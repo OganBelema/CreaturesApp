@@ -44,6 +44,19 @@
             app:layout_constraintStart_toStartOf="@+id/fullName"
             app:layout_constraintTop_toBottomOf="@+id/fullName"
             tools:text="Nick Name" />
+
+        <ImageView
+            android:id="@+id/dragHandle"
+            android:layout_width="@dimen/drag_handle_size"
+            android:layout_height="@dimen/drag_handle_size"
+            android:contentDescription="@string/drag_handle"
+            app:srcCompat="@drawable/ic_reorder"
+            android:scaleType="center"
+            android:tint="@color/colorAccent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
     </android.support.constraint.ConstraintLayout>
 
     <data>

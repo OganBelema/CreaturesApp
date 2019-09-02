@@ -43,7 +43,6 @@ import com.raywenderlich.android.creatures.databinding.FragmentFavoritesBinding
 import com.raywenderlich.android.creatures.model.CompositeItem
 import com.raywenderlich.android.creatures.model.Creature
 import com.raywenderlich.android.creatures.model.CreatureStore
-import com.raywenderlich.android.creatures.model.Favorites
 import java.util.*
 
 
@@ -61,15 +60,21 @@ class FavoritesFragment : Fragment(), ItemTouchHelperListener  {
         }
     }
 
+    private val itemDragListener: (viewHolder: RecyclerView.ViewHolder) -> Unit = {
+        itemTouchHelper.startDrag(it)
+    }
+
     private lateinit var creatureAdapter: CreatureAdapter
 
     private lateinit var compositeItems: List<CompositeItem>
+
+    private lateinit var itemTouchHelper: ItemTouchHelper
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         val fragmentFavoritesBinding: FragmentFavoritesBinding = FragmentFavoritesBinding.inflate(inflater)
 
-        creatureAdapter = CreatureAdapter(clickListener)
+        creatureAdapter = CreatureAdapter(clickListener, itemDragListener)
 
         val heightInPixel = resources.getDimensionPixelSize(R.dimen.list_item_divider_height)
 
@@ -77,7 +82,7 @@ class FavoritesFragment : Fragment(), ItemTouchHelperListener  {
             adapter = creatureAdapter
             addItemDecoration(DividerItemDecoration(ContextCompat.getColor(context, R.color.black),
                     heightInPixel))
-            val itemTouchHelper = ItemTouchHelper(ItemTouchHelperCallback(this@FavoritesFragment))
+            itemTouchHelper = ItemTouchHelper(ItemTouchHelperCallback(this@FavoritesFragment))
             itemTouchHelper.attachToRecyclerView(this)
         }
 

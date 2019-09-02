@@ -22,4 +22,5 @@
     <dimen name="list_item_with_divider_height">132dp</dimen>
     <dimen name="header_height">60dp</dimen>
     <dimen name="creature_card_slogan_text_size">20sp</dimen>
+    <dimen name="drag_handle_size">48dp</dimen>
 </resources>
