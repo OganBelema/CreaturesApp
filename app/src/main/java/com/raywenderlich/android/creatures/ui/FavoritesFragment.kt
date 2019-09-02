@@ -43,6 +43,7 @@ import com.raywenderlich.android.creatures.databinding.FragmentFavoritesBinding
 import com.raywenderlich.android.creatures.model.CompositeItem
 import com.raywenderlich.android.creatures.model.Creature
 import com.raywenderlich.android.creatures.model.CreatureStore
+import com.raywenderlich.android.creatures.model.Favorites
 import java.util.*
 
 
@@ -66,7 +67,7 @@ class FavoritesFragment : Fragment(), ItemTouchHelperListener {
 
     private lateinit var creatureAdapter: CreatureAdapter
 
-    private lateinit var compositeItems: List<CompositeItem>
+    private lateinit var compositeItems: MutableList<CompositeItem>
 
     private lateinit var itemTouchHelper: ItemTouchHelper
 
@@ -92,7 +93,7 @@ class FavoritesFragment : Fragment(), ItemTouchHelperListener {
     override fun onResume() {
         super.onResume()
         context?.let {
-            compositeItems = CreatureStore.getFavoriteComposite(it)
+            compositeItems = CreatureStore.getFavoriteComposite(it).toMutableList()
             creatureAdapter.submitList(compositeItems)
         }
     }
@@ -112,5 +113,12 @@ class FavoritesFragment : Fragment(), ItemTouchHelperListener {
         }
         creatureAdapter.notifyItemMoved(fromPosition, toPosition)
         return true
+    }
+
+    override fun onItemDismiss(viewHolder: RecyclerView.ViewHolder, position: Int) {
+        //TODO persist change
+        //Favorites.removeFavorite(compositeItems[position], )
+        compositeItems.removeAt(position)
+        creatureAdapter.notifyItemRemoved(position)
     }
 }

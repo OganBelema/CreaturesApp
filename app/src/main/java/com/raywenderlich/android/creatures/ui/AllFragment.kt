@@ -194,4 +194,8 @@ class AllFragment : Fragment(), ItemTouchHelperListener {
     return true
   }
 
+  override fun onItemDismiss(viewHolder: RecyclerView.ViewHolder, position: Int) {
+
+  }
+
 }
