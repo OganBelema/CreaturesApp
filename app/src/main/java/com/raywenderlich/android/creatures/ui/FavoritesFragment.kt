@@ -46,7 +46,7 @@ import com.raywenderlich.android.creatures.model.CreatureStore
 import java.util.*
 
 
-class FavoritesFragment : Fragment(), ItemTouchHelperListener  {
+class FavoritesFragment : Fragment(), ItemTouchHelperListener {
 
     companion object {
         fun newInstance(): FavoritesFragment {
@@ -99,14 +99,14 @@ class FavoritesFragment : Fragment(), ItemTouchHelperListener  {
 
     override fun onItemMove(recyclerView: RecyclerView, fromPosition: Int, toPosition: Int):
             Boolean {
-        if (fromPosition < toPosition){
-            for(i in fromPosition until toPosition){
+        if (fromPosition < toPosition) {
+            for (i in fromPosition until toPosition) {
                 context?.let {
                     Collections.swap(compositeItems, i, i + 1)
                 }
             }
         } else {
-            for (i in fromPosition downTo toPosition + 1){
+            for (i in fromPosition downTo toPosition + 1) {
                 Collections.swap(compositeItems, i, i - 1)
             }
         }

@@ -19,7 +19,7 @@ class CreatureCardAdapter(private val clickListener: (creature: Creature) -> Uni
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
-        return when(viewType){
+        return when (viewType) {
             ViewType.JUPITER.ordinal -> CreatureJupiterCardViewHolder.from(parent)
             ViewType.OTHER.ordinal -> CreatureCardViewHolder.from(parent)
             ViewType.MARS.ordinal -> CreatureMarsCardViewHolder.from(parent)
@@ -37,7 +37,7 @@ class CreatureCardAdapter(private val clickListener: (creature: Creature) -> Uni
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when(holder){
+        when (holder) {
             is CreatureCardViewHolder -> {
                 creatureCardViewHolder = holder
                 holder.bind(getItem(position), clickListener)

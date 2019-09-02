@@ -29,7 +29,7 @@ class CreatureItemViewHolder(private val listItemCreatureBinding: ListItemCreatu
             }
 
             listItemCreatureBinding.dragHandle.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN){
+                if (event.action == MotionEvent.ACTION_DOWN) {
                     itemDragListener(this)
                 }
                 false

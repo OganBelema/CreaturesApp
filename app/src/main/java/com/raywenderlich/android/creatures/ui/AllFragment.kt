@@ -34,15 +34,16 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.StaggeredGridLayoutManager
+import android.support.v7.widget.helper.ItemTouchHelper
 import android.view.*
 import com.raywenderlich.android.creatures.R
 import com.raywenderlich.android.creatures.databinding.FragmentAllBinding
 import com.raywenderlich.android.creatures.model.Creature
 import com.raywenderlich.android.creatures.model.CreatureStore
+import java.util.*
 
 
-class AllFragment : Fragment() {
+class AllFragment : Fragment(), ItemTouchHelperListener {
 
   companion object {
     fun newInstance(): AllFragment {
@@ -72,6 +73,8 @@ class AllFragment : Fragment() {
 
   private lateinit var creatureAdapter: CreatureCardAdapter
 
+  private lateinit var creatures: List<Creature>
+
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
     fragmentAllBinding = FragmentAllBinding.inflate(layoutInflater)
@@ -98,22 +101,33 @@ class AllFragment : Fragment() {
       adapter = creatureAdapter
       this.layoutManager = gridLayoutManager
       addItemDecoration(gridItemDecoration)
-      addOnScrollListener(object : RecyclerView.OnScrollListener(){
-        override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
-          super.onScrolled(recyclerView, dx, dy)
-          creatureAdapter.creatureCardViewHolder.scrollDirection = if (dy > 0){
-            ScrollDirection.DOWN
-          } else {
-            ScrollDirection.UP
-          }
-        }
-      })
+      setupScrollListener()
+      setupTouchHelper()
     }
-    creatureAdapter.submitList(CreatureStore.getCreatures())
+    creatures = CreatureStore.getCreatures()
+    creatureAdapter.submitList(creatures)
 
     setHasOptionsMenu(true)
 
     return fragmentAllBinding.root
+  }
+
+  private fun RecyclerView?.setupTouchHelper() {
+    val itemTouchHelper = ItemTouchHelper(GridItemTouchHelperCallback(this@AllFragment))
+    itemTouchHelper.attachToRecyclerView(this)
+  }
+
+  private fun RecyclerView.setupScrollListener() {
+    addOnScrollListener(object : RecyclerView.OnScrollListener() {
+      override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+        super.onScrolled(recyclerView, dx, dy)
+        creatureAdapter.creatureCardViewHolder.scrollDirection = if (dy > 0) {
+          ScrollDirection.DOWN
+        } else {
+          ScrollDirection.UP
+        }
+      }
+    })
   }
 
   override fun onPrepareOptionsMenu(menu: Menu) {
@@ -164,6 +178,20 @@ class AllFragment : Fragment() {
       addItemDecoration(addItemDecoration)
     }
 
+  }
+
+  override fun onItemMove(recyclerView: RecyclerView, fromPosition: Int, toPosition: Int): Boolean {
+    if (fromPosition < toPosition){
+      for (i in fromPosition until toPosition){
+        Collections.swap(creatures, i, i + 1)
+      }
+    } else {
+      for (i in fromPosition downTo toPosition + 1){
+        Collections.swap(creatures, i, i - 1)
+      }
+    }
+    creatureAdapter.notifyItemMoved(fromPosition, toPosition)
+    return true
   }
 
 }
