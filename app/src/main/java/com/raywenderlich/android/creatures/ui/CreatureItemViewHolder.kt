@@ -1,5 +1,6 @@
 package com.raywenderlich.android.creatures.ui
 
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -14,7 +15,7 @@ import com.raywenderlich.android.creatures.model.Creature
  * Created by Belema Ogan on 2019-08-24.
  */
 class CreatureItemViewHolder(private val listItemCreatureBinding: ListItemCreatureBinding) :
-        RecyclerView.ViewHolder(listItemCreatureBinding.root) {
+        RecyclerView.ViewHolder(listItemCreatureBinding.root), ItemSelectedListener {
 
     fun bind(creature: Creature?, clickListener: (creature: Creature) -> Unit,
              itemDragListener: (viewHolder: RecyclerView.ViewHolder) -> Unit) {
@@ -42,6 +43,17 @@ class CreatureItemViewHolder(private val listItemCreatureBinding: ListItemCreatu
             val animation = AnimationUtils.loadAnimation(viewToAnimate.context, R.anim.scale)
             viewToAnimate.animation = animation
         }
+    }
+
+    override fun onItemSelected() {
+        listItemCreatureBinding.listItemContainer
+                .setBackgroundColor(ContextCompat.getColor(listItemCreatureBinding.root.context,
+                        R.color.selectedItem))
+
+    }
+
+    override fun onItemCleared() {
+        listItemCreatureBinding.listItemContainer.setBackgroundColor(0)
     }
 
     companion object {

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/listItemContainer"
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_with_divider_height">
 
