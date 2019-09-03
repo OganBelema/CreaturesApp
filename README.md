@@ -1,9 +1,22 @@
 # CreaturesApp
-An app that shows a list of creatures and the food they eat as well as a screen for creatures favourited by the user.
+An app that shows a list of creatures and the food they eat as well as a screen for creatures favourited by the user. Credit: Raywenderlich Beginning RecyclerView course
 
 <a href="https://www.youtube.com/playlist?list=PLfiY83xjftUZLVNvKAX6RygVJMoLAFar6" 
 target="_blank"><img src="screenshots/creature_app.png"
 alt="App demo video" width="560" height="315" border="10" /></a>
+
+Contains
+- Drag and drop with recyclerview for both GridLayoutManager & LinearLayoutManager
+- Swipe to delete 
+- RecyclerView Item animation in relation to scroll direction
+- DiffUtil to calculate list difference
+- Multiple view types in recyclerView
+- Showing headers
+- Adding custom item decorator
+- Databinding with Recylerviews & BindingAdapters
+- Nested RecyclerView
+- Custom span size
+- Using handler icon to trigger move and drop action
 
 <p float="left">
   <img src="screenshots/Screenshot_1566903173.png" width="200" height="400"> 
