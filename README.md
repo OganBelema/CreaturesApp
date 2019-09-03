@@ -1,6 +1,10 @@
 # CreaturesApp
 An app that shows a list of creatures and the food they eat as well as a screen for creatures favourited by the user.
 
+<a href="https://www.youtube.com/playlist?list=PLfiY83xjftUZLVNvKAX6RygVJMoLAFar6" 
+target="_blank"><img src="screenshots/creature_app.png"
+alt="App demo video" width="560" height="315" border="10" /></a>
+
 <p float="left">
   <img src="screenshots/Screenshot_1566903173.png" width="200" height="400"> 
   <img src="screenshots/Screenshot_1566903177.png" width="200" height="400">
