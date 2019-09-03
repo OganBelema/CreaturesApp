@@ -30,7 +30,6 @@ Contains
   <img src="screenshots/Screenshot_1566905604.png" width="200" height="400">
   <img src="screenshots/Screenshot_1566905609.png" width="200" height="400">
   <img src="screenshots/Screenshot_1567454580.png" width="200" height="400">
-  <img src="screenshots/Screenshot_1567454589.png" width="200" height="400">
   <img src="screenshots/Screenshot_1567454599.png" width="200" height="400">
   <img src="screenshots/Screenshot_1567454607.png" width="200" height="400">
   <img src="screenshots/Screenshot_1567458027.png" width="200" height="400">
@@ -42,7 +41,6 @@ Contains
   <img src="screenshots/Screenshot_1567458669.png" width="200" height="400">
   <img src="screenshots/Screenshot_1567458677.png" width="200" height="400">
   <img src="screenshots/Screenshot_1567458693.png" width="200" height="400">
-  <img src="screenshots/Screenshot_1567458872.png" width="200" height="400">
   <img src="screenshots/Screenshot_1567458876.png" width="200" height="400">
   <img src="screenshots/Screenshot_1567458882.png" width="200" height="400">
 </p>
