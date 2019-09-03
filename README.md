@@ -16,7 +16,7 @@ Contains
 - Databinding with Recylerviews & BindingAdapters
 - Nested RecyclerView
 - Custom span size
-- Using handler icon to trigger move and drop action
+- Using handler icon to trigger drag and drop action
 
 <p float="left">
   <img src="screenshots/Screenshot_1566903173.png" width="200" height="400"> 
